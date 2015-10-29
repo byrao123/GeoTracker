@@ -26,7 +26,7 @@
             </not>
         </condition>
     </fail>
-    <target depends="dist,javadoc" description="Build whole project." name="default"/>
+    <target depends="dist" description="Build whole project." name="default"/>
     <!--
                 INITIALIZATION SECTION
             -->
@@ -1318,7 +1318,7 @@ exists or setup the property manually. For example like this:
     </target>
     <!--
                 JAVADOC SECTION
-            -->
+        
     <target depends="init" if="have.sources" name="javadoc-build">
         <mkdir dir="${dist.javadoc.dir}"/>
         <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
@@ -1342,11 +1342,13 @@ exists or setup the property manually. For example like this:
             </fileset>
         </copy>
     </target>
+	   
     <target depends="init,javadoc-build" if="netbeans.home" name="javadoc-browse" unless="no.javadoc.preview">
         <nbbrowse file="${dist.javadoc.dir}/index.html"/>
     </target>
     <target depends="init,javadoc-build,javadoc-browse" description="Build Javadoc." name="javadoc"/>
-    <!--
+     -->
+	<!--
                 
                 TEST COMPILATION SECTION
             -->

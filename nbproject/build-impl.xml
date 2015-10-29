@@ -1319,7 +1319,7 @@ exists or setup the property manually. For example like this:
     <!--
                 JAVADOC SECTION
             -->
-   <!-- <target depends="init" if="have.sources" name="javadoc-build">
+    <target depends="init" if="have.sources" name="javadoc-build">
         <mkdir dir="${dist.javadoc.dir}"/>
         <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
             <classpath>
@@ -1332,7 +1332,7 @@ exists or setup the property manually. For example like this:
                 <include name="**/*.java"/>
             </fileset>
         </javadoc>
-        -->
+       
         <copy todir="${dist.javadoc.dir}">
             <fileset dir="${src.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
